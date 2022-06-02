@@ -78,8 +78,7 @@ print(train.head())
 counted_items = train.groupby("sentiment")["sentiment"].count()
 print(counted_items)
 
-sns.barplot(x=counted_items.index, y=counted_items.values)
-
+# sns.barplot(x=counted_items.index, y=counted_items.values)
 # plt.show()
 
 
@@ -119,3 +118,7 @@ for a, b in zip(text_list, selected_text_list):
 train["jaccard"] = jaccard_values
 
 print(train.head())
+
+sns.kdeplot(x=jaccard_values, shade=True)
+
+plt.show()

@@ -9,5 +9,5 @@ class Tweet:
         self.sender = sender
 
     def __str__(self):
-        return self.message
+        return "{} tweeted: {}".format(self.sender.alias, self.message)
 

@@ -18,5 +18,5 @@ class UserAccount:
 
     def tweet(self, tweet: Tweet):
         self.tweets.append(tweet)
-        for follower in self.followers:
+        for follower in self.__followers:
             follower.timeline.append(tweet)

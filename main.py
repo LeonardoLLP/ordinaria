@@ -35,6 +35,7 @@ print(counted_items)
 #! Para sacar el gráfico:
 sns.barplot(x=counted_items.index, y=counted_items.values)
 plt.savefig("barplot")
+plt.close()
 
 
 #! Ejercicio 2
@@ -73,6 +74,7 @@ for a, b in zip(text_list, selected_text_list):
 train["jaccard"] = jaccard_values
 
 print(train.head())
+
 
 sns.kdeplot(x=jaccard_values, shade=True)
 plt.savefig("jaccard_distribution")

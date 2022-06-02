@@ -1,5 +1,7 @@
 from time import time
 import pandas as pd
+import seaborn as sns
+from matplotlib import pyplot as plt
 
 # Clases vacías para poder especificarlas en UserAccount
 class Tweet:
@@ -64,8 +66,26 @@ class Retweet(Tweet):
 
 
 #! Análisis EDA
-
-train = pd.read_csv("train.csv")
+#! Ejercicio 1
+train = pd.read_csv("train.csv", index_col=0)
 test = pd.read_csv("test.csv")
-ss = pd.read_csv("ss.csv")
+ss = pd.read_csv("sample_submission.csv")
 
+train = train.dropna()
+
+print(train.head())
+
+counted_items = train.groupby("sentiment")["sentiment"].count()
+print(counted_items)
+
+sns.barplot(x=counted_items.index, y=counted_items.values)
+
+# plt.show()
+
+
+#! Ejercicio 2
+
+text_list = list(train.text)
+selected_text_list = 
+
+print(text_length)

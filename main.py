@@ -31,13 +31,32 @@ class UserAccount:
 
 #! Ejercicio 2: Tweet y sus subclases
 class Tweet:
-    def __init__(self, message, sender):
-        self.time = time()
+    def __init__(self, message: str, sender: UserAccount):
+        assert len(message) <= 140
+        self.time = time
         self.message = message
         self.sender = sender
 
+    def __str__(self):
+        return self.message
+
 class DirectMessage(Tweet):
-    def __init__(self, message, sender, receiver):
+    def __init__(self, message: str, sender: UserAccount, receiver: UserAccount):
         super().__init__(message, sender)
         self.receiver = receiver
+
+class Retweet(Tweet):
+    def __init__(self, message: str, sender: UserAccount, original_tweet: Tweet):
+        super().__init__(message, sender)
+        self.original_tweet = original_tweet
+
+
+
+#! Respuestas al ejercicio 2.d
+
+#? a) Si, en timeline solamente deberán aparecer los mensajes que no son DirectMessages.
+#? Sin embargo, no hay que cambiar la variable tweets, ya que esa seguirá aceptando todos los tweets del propio user, sea un mensaje directo o no
+
+#? No, ya que en python, si funciona con la clase madre, también funciona con la clase hija. Es un principio de diseño de la POO.
+
 

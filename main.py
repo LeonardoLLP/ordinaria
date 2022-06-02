@@ -4,27 +4,18 @@ import seaborn as sns
 from matplotlib import pyplot as plt
 
 
-
-# Clases vacías para poder especificarlas en UserAccount
-
-
-
-#! Ejercicio 1: UserAccount
-
-
-
-
-#! Ejercicio 2: Tweet y sus subclases
-
-
-
+#! Importamos los archivos de clases
+from useraccount import UserAccount
+from tweet import Tweet
+from retweet import Retweet
+from directmessage import DirectMessage
 
 #! Respuestas al ejercicio 2.d
 
 #? a) Si, en timeline solamente deberán aparecer los mensajes que no son DirectMessages.
 #? Sin embargo, no hay que cambiar la variable tweets, ya que esa seguirá aceptando todos los tweets del propio user, sea un mensaje directo o no
 
-#? No, ya que en python, si funciona con la clase madre, también funciona con la clase hija. Es un principio de diseño de la POO.
+#? b) No, ya que en python, si funciona con la clase madre, también funciona con la clase hija. Es un principio de diseño de la POO.
 
 
 

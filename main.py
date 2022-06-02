@@ -86,6 +86,21 @@ sns.barplot(x=counted_items.index, y=counted_items.values)
 #! Ejercicio 2
 
 text_list = list(train.text)
-selected_text_list = 
+selected_text_list = list(train.selected_text)
 
-print(text_length)
+print(text_list)
+
+text_words = []
+selected_text_words = []
+
+for text in text_list:
+    splitted_text = text.strip().split(sep=" ")
+    text_words.append(len(splitted_text))
+
+for text in selected_text_list:
+    splitted_text = text.strip().split(sep=" ")
+    selected_text_words.append(len(splitted_text))
+
+train["words_difference"] = pd.Series(text_words) - pd.Series(selected_text_words)
+
+print(train.head())

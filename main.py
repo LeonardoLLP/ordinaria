@@ -3,6 +3,8 @@ import pandas as pd
 import seaborn as sns
 from matplotlib import pyplot as plt
 
+
+
 # Clases vacías para poder especificarlas en UserAccount
 class Tweet:
     pass
@@ -10,7 +12,6 @@ class Email:
     pass
 class UserAccount:
     pass
-
 
 
 #! Ejercicio 1: UserAccount
@@ -78,8 +79,9 @@ print(train.head())
 counted_items = train.groupby("sentiment")["sentiment"].count()
 print(counted_items)
 
-# sns.barplot(x=counted_items.index, y=counted_items.values)
-# plt.show()
+#! Para sacar el gráfico:
+sns.barplot(x=counted_items.index, y=counted_items.values)
+plt.savefig("barplot")
 
 
 #! Ejercicio 2
@@ -120,5 +122,4 @@ train["jaccard"] = jaccard_values
 print(train.head())
 
 sns.kdeplot(x=jaccard_values, shade=True)
-
-plt.show()
+plt.savefig("jaccard_distribution")

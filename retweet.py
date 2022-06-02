@@ -5,3 +5,6 @@ class Retweet(Tweet):
     def __init__(self, message: str, sender: UserAccount, original_tweet: Tweet):
         super().__init__(message, sender)
         self.original_tweet = original_tweet
+
+    def __str__(self):
+        return self.print_tweet("retweeted")

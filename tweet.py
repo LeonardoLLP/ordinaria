@@ -8,6 +8,8 @@ class Tweet:
         self.message = message
         self.sender = sender
 
-    def __str__(self):
-        return "{} tweeted: {}".format(self.sender.alias, self.message)
+    def print_tweet(self, message: str):
+        return "{} {}: {}".format(self.sender.alias, message, self.message)
 
+    def __str__(self):
+       return self.print_tweet("tweeted")

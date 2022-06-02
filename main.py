@@ -1,4 +1,5 @@
 from time import time
+import pandas as pd
 
 # Clases vacías para poder especificarlas en UserAccount
 class Tweet:
@@ -59,4 +60,12 @@ class Retweet(Tweet):
 
 #? No, ya que en python, si funciona con la clase madre, también funciona con la clase hija. Es un principio de diseño de la POO.
 
+
+
+
+#! Análisis EDA
+
+train = pd.read_csv("train.csv")
+test = pd.read_csv("test.csv")
+ss = pd.read_csv("ss.csv")
 

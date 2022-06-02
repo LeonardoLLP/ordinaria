@@ -88,7 +88,7 @@ sns.barplot(x=counted_items.index, y=counted_items.values)
 text_list = list(train.text)
 selected_text_list = list(train.selected_text)
 
-print(text_list)
+
 
 text_words = []
 selected_text_words = []
@@ -101,6 +101,17 @@ for text in selected_text_list:
     splitted_text = text.strip().split(sep=" ")
     selected_text_words.append(len(splitted_text))
 
+print(text_words[:5])
+print(selected_text_words[:5])
+
 train["words_difference"] = pd.Series(text_words) - pd.Series(selected_text_words)
 
 print(train.head())
+
+def jaccard(str1, str2):
+    a = set(str1.lower().split())
+    b = set(str2.lower().split())
+    c = a.intersection(b)
+    return float(len(c)) / (len(a) + len(b) - len(c))
+
+train["jaccard"] = jaccard(train.text, train.selected_text)
